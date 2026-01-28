@@ -14,10 +14,14 @@ dist-ssr
 coverage
 *.local
 
+# Environment
+.env
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
 .idea
+*.iml
 *.suo
 *.ntvs*
 *.njsproj
