@@ -20,6 +20,10 @@
     "finances": {
       "title": "Personal finances",
       "description": "Budget, expenses and savings goals"
+    },
+    "drawing": {
+      "title": "Drawing",
+      "description": "Create and edit illustrations on a multi-layer canvas"
     }
   },
   "games": {
@@ -58,6 +62,47 @@
     "retry": "Retry",
     "openPanel": "Open API panel",
     "closePanel": "Close"
+  },
+  "drawing": {
+    "title": "Drawing",
+    "chooseSize": "Choose the canvas size to get started.",
+    "create": "Create",
+    "opacity": "Opacity",
+    "brushSize": "Brush size",
+    "recentColors": "Recent colors",
+    "undo": "Undo",
+    "redo": "Redo",
+    "export": "Export",
+    "transparent": "transparent",
+    "whiteBg": "white background",
+    "importImage": "Import image",
+    "importAsBgConfirm": "OK = Background (locked layer at bottom)\nCancel = Free element (movable)",
+    "rasterize": "Apply",
+    "cancel": "Cancel",
+    "tools": {
+      "label": "Tools",
+      "brush": "Brush",
+      "pencil": "Pencil",
+      "eraser": "Eraser",
+      "fill": "Fill",
+      "line": "Line",
+      "rect": "Rectangle",
+      "circle": "Circle",
+      "eyedropper": "Eyedropper"
+    },
+    "layers": {
+      "label": "Layers",
+      "add": "Add layer",
+      "remove": "Remove",
+      "moveUp": "Move up",
+      "moveDown": "Move down",
+      "merge": "Merge down",
+      "hide": "Hide",
+      "show": "Show",
+      "opacity": "Layer opacity",
+      "renamePrompt": "New layer name:",
+      "background": "Background (image)"
+    }
   }
 }
 

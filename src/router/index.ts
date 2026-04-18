@@ -18,6 +18,12 @@ const router = createRouter({
       name: 'tic-tac-toe',
       component: () => import('@/views/TicTacToeView.vue'),
     },
+    {
+      path: '/dessin',
+      name: 'drawing',
+      component: () => import('@/views/DrawingView.vue'),
+      meta: { fullWidth: true },
+    },
   ],
 })
 

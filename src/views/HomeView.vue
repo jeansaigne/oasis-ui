@@ -14,6 +14,14 @@ const apps = computed(() => [
     route: '/games',
   },
   {
+    title: t('apps.drawing.title'),
+    description: t('apps.drawing.description'),
+    icon: 'i-lucide-brush',
+    color: 'warning' as const,
+    disabled: false,
+    route: '/dessin',
+  },
+  {
     title: t('apps.trading.title'),
     description: t('apps.trading.description'),
     icon: 'i-lucide-chart-candlestick',

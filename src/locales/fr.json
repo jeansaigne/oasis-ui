@@ -20,6 +20,10 @@
     "finances": {
       "title": "Finances personnelles",
       "description": "Budget, dépenses et objectifs d'épargne"
+    },
+    "drawing": {
+      "title": "Dessin",
+      "description": "Créez et éditez des illustrations sur un canvas multicouche"
     }
   },
   "games": {
@@ -58,6 +62,47 @@
     "retry": "Réessayer",
     "openPanel": "Ouvrir le panneau API",
     "closePanel": "Fermer"
+  },
+  "drawing": {
+    "title": "Dessin",
+    "chooseSize": "Choisissez la taille du canvas pour commencer.",
+    "create": "Créer",
+    "opacity": "Opacité",
+    "brushSize": "Taille du pinceau",
+    "recentColors": "Couleurs récentes",
+    "undo": "Annuler",
+    "redo": "Rétablir",
+    "export": "Exporter",
+    "transparent": "transparent",
+    "whiteBg": "fond blanc",
+    "importImage": "Importer une image",
+    "importAsBgConfirm": "OK = Fond (calque verrouillé en bas)\nAnnuler = Élément libre (déplaçable)",
+    "rasterize": "Valider",
+    "cancel": "Annuler",
+    "tools": {
+      "label": "Outils",
+      "brush": "Pinceau",
+      "pencil": "Crayon",
+      "eraser": "Gomme",
+      "fill": "Remplissage",
+      "line": "Ligne",
+      "rect": "Rectangle",
+      "circle": "Cercle",
+      "eyedropper": "Pipette"
+    },
+    "layers": {
+      "label": "Calques",
+      "add": "Ajouter un calque",
+      "remove": "Supprimer",
+      "moveUp": "Monter",
+      "moveDown": "Descendre",
+      "merge": "Fusionner vers le bas",
+      "hide": "Masquer",
+      "show": "Afficher",
+      "opacity": "Opacité du calque",
+      "renamePrompt": "Nouveau nom du calque :",
+      "background": "Fond (image)"
+    }
   }
 }
 
