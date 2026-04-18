@@ -300,13 +300,12 @@ onUnmounted(() => window.removeEventListener('keydown', onKey))
 <style scoped>
 .drawing-layout {
   display: flex;
-  height: calc(100vh - 80px);
-  margin: -2.5rem -1.5rem;
+  height: 100vh;
   overflow: hidden;
 }
 
 .drawing-sidebar {
-  width: 200px;
+  width: 230px;
   flex-shrink: 0;
   background: rgba(0, 0, 0, 0.3);
   border-color: rgba(255, 255, 255, 0.06);
@@ -330,7 +329,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKey))
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.35rem 0.75rem;
+  padding: 0.5rem 1rem;
   background: rgba(0, 0, 0, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }

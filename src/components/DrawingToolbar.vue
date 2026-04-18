@@ -39,11 +39,11 @@ const tools: { id: Tool; icon: string; labelKey: string }[] = [
 </script>
 
 <template>
-  <div class="flex flex-col gap-4 p-3 h-full overflow-y-auto">
+  <div class="flex flex-col gap-5 p-4 h-full overflow-y-auto">
     <!-- Tools -->
     <div>
-      <label class="text-[10px] uppercase tracking-wider text-white/40 mb-2 block">{{ t('drawing.tools.label') }}</label>
-      <div class="grid grid-cols-2 gap-1">
+      <label class="text-[10px] uppercase tracking-wider text-white/40 mb-2.5 block">{{ t('drawing.tools.label') }}</label>
+      <div class="grid grid-cols-2 gap-1.5">
         <button
           v-for="tl in tools"
           :key="tl.id"
@@ -59,7 +59,7 @@ const tools: { id: Tool; icon: string; labelKey: string }[] = [
 
     <!-- Brush size -->
     <div>
-      <label class="text-[10px] uppercase tracking-wider text-white/40 mb-1 block">{{ t('drawing.brushSize') }} · {{ brushSize }}px</label>
+      <label class="text-[10px] uppercase tracking-wider text-white/40 mb-2 block">{{ t('drawing.brushSize') }} · {{ brushSize }}px</label>
       <input
         type="range"
         min="1"
@@ -80,9 +80,9 @@ const tools: { id: Tool; icon: string; labelKey: string }[] = [
     />
 
     <!-- Undo / Redo -->
-    <div class="flex gap-1">
+    <div class="flex gap-1.5">
       <button
-        class="cyber-tool-btn flex-1"
+        class="cyber-tool-btn flex-1 justify-center"
         :disabled="!canUndo"
         :title="t('drawing.undo')"
         @click="emit('undo')"
@@ -90,7 +90,7 @@ const tools: { id: Tool; icon: string; labelKey: string }[] = [
         <UIcon name="i-lucide-undo-2" class="text-base" />
       </button>
       <button
-        class="cyber-tool-btn flex-1"
+        class="cyber-tool-btn flex-1 justify-center"
         :disabled="!canRedo"
         :title="t('drawing.redo')"
         @click="emit('redo')"
@@ -100,19 +100,19 @@ const tools: { id: Tool; icon: string; labelKey: string }[] = [
     </div>
 
     <!-- Import -->
-    <button class="cyber-tool-btn w-full justify-center gap-2 py-2" @click="emit('import')">
+    <button class="cyber-tool-btn w-full justify-center gap-2 py-2.5" @click="emit('import')">
       <UIcon name="i-lucide-image-plus" class="text-base" />
       <span class="text-xs">{{ t('drawing.importImage') }}</span>
     </button>
 
     <!-- Export -->
-    <div class="flex flex-col gap-1 mt-auto">
+    <div class="flex flex-col gap-1.5 mt-auto pt-4 border-t border-white/5">
       <label class="text-[10px] uppercase tracking-wider text-white/40 mb-1 block">{{ t('drawing.export') }}</label>
-      <button class="cyber-tool-btn w-full justify-center gap-2 py-2" @click="emit('export', true)">
+      <button class="cyber-tool-btn w-full justify-center gap-2 py-2.5" @click="emit('export', true)">
         <UIcon name="i-lucide-download" class="text-base" />
         <span class="text-xs">PNG {{ t('drawing.transparent') }}</span>
       </button>
-      <button class="cyber-tool-btn w-full justify-center gap-2 py-2" @click="emit('export', false)">
+      <button class="cyber-tool-btn w-full justify-center gap-2 py-2.5" @click="emit('export', false)">
         <UIcon name="i-lucide-download" class="text-base" />
         <span class="text-xs">PNG {{ t('drawing.whiteBg') }}</span>
       </button>
@@ -124,8 +124,8 @@ const tools: { id: Tool; icon: string; labelKey: string }[] = [
 .cyber-tool-btn {
   display: flex;
   align-items: center;
-  padding: 0.4rem;
-  border-radius: 0.375rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: 0.5rem;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.06);
   color: rgba(255, 255, 255, 0.6);

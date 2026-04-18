@@ -30,8 +30,8 @@ function startRename(layer: Layer) {
 </script>
 
 <template>
-  <div class="flex flex-col h-full p-3 gap-2">
-    <div class="flex items-center justify-between mb-1">
+  <div class="flex flex-col h-full p-4 gap-3">
+    <div class="flex items-center justify-between">
       <label class="text-[10px] uppercase tracking-wider text-white/40">{{ t('drawing.layers.label') }}</label>
       <button
         class="text-white/50 hover:text-[#00cfff] transition-colors"
@@ -42,7 +42,7 @@ function startRename(layer: Layer) {
       </button>
     </div>
 
-    <div class="flex-1 overflow-y-auto flex flex-col-reverse gap-1">
+    <div class="flex-1 overflow-y-auto flex flex-col-reverse gap-1.5">
       <div
         v-for="layer in layers"
         :key="layer.id"
@@ -66,7 +66,7 @@ function startRename(layer: Layer) {
           <span v-if="layer.locked" class="text-white/30 ml-1">🔒</span>
         </span>
 
-        <div class="flex items-center gap-0.5 opacity-0 group-hover:opacity-100 shrink-0">
+        <div class="flex items-center gap-0.5 shrink-0 layer-actions">
           <button
             class="layer-action"
             :title="t('drawing.layers.moveUp')"
@@ -100,7 +100,7 @@ function startRename(layer: Layer) {
     </div>
 
     <!-- Per-layer opacity (active layer) -->
-    <div v-if="layers.find(l => l.id === activeLayerId)" class="pt-2 border-t border-white/5">
+    <div v-if="layers.find(l => l.id === activeLayerId)" class="pt-3 mt-1 border-t border-white/5">
       <label class="text-[10px] uppercase tracking-wider text-white/40 mb-1 block">
         {{ t('drawing.layers.opacity') }} · {{ Math.round((layers.find(l => l.id === activeLayerId)?.opacity ?? 1) * 100) }}%
       </label>
@@ -120,21 +120,23 @@ function startRename(layer: Layer) {
 .cyber-layer-item {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.35rem 0.5rem;
-  border-radius: 0.375rem;
+  gap: 0.5rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: 0.5rem;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid transparent;
   cursor: pointer;
   transition: all 0.15s ease;
-  group: '';
+}
+.cyber-layer-item .layer-actions {
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+.cyber-layer-item:hover .layer-actions {
+  opacity: 1;
 }
 .cyber-layer-item:hover {
   background: rgba(255, 255, 255, 0.06);
-}
-.cyber-layer-item:hover .layer-action,
-.cyber-layer-item:hover > div {
-  opacity: 1 !important;
 }
 .cyber-layer-item.active {
   background: rgba(0, 207, 255, 0.08);
@@ -145,8 +147,8 @@ function startRename(layer: Layer) {
 }
 .layer-action {
   color: rgba(255, 255, 255, 0.4);
-  padding: 2px;
-  border-radius: 3px;
+  padding: 3px;
+  border-radius: 4px;
   transition: all 0.1s;
 }
 .layer-action:hover {

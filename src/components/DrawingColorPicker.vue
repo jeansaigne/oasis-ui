@@ -40,8 +40,8 @@ const opacityPercent = computed({
 </script>
 
 <template>
-  <div class="flex flex-col gap-3">
-    <div class="flex items-center gap-2">
+  <div class="flex flex-col gap-4">
+    <div class="flex items-center gap-3">
       <div class="relative">
         <div
           class="w-10 h-10 rounded-lg border border-white/10 cyber-color-preview"
@@ -56,15 +56,15 @@ const opacityPercent = computed({
       </div>
       <input
         :value="hexInput"
-        class="flex-1 bg-white/5 border border-white/10 rounded-md px-2 py-1 text-xs font-mono text-white/80 focus:outline-none focus:border-[#00cfff]/50"
+        class="flex-1 bg-white/5 border border-white/10 rounded-lg px-3 py-1.5 text-xs font-mono text-white/80 focus:outline-none focus:border-[#00cfff]/50"
         maxlength="7"
         @input="onHexInput(($event.target as HTMLInputElement).value)"
       />
     </div>
 
     <div>
-      <label class="text-[10px] uppercase tracking-wider text-white/40 mb-1 block">{{ t('drawing.opacity') }}</label>
-      <div class="flex items-center gap-2">
+      <label class="text-[10px] uppercase tracking-wider text-white/40 mb-2 block">{{ t('drawing.opacity') }}</label>
+      <div class="flex items-center gap-3">
         <input
           type="range"
           min="0"
@@ -78,12 +78,12 @@ const opacityPercent = computed({
     </div>
 
     <div>
-      <label class="text-[10px] uppercase tracking-wider text-white/40 mb-1 block">{{ t('drawing.recentColors') }}</label>
-      <div class="flex flex-wrap gap-1">
+      <label class="text-[10px] uppercase tracking-wider text-white/40 mb-2 block">{{ t('drawing.recentColors') }}</label>
+      <div class="flex flex-wrap gap-1.5">
         <button
           v-for="c in colorHistory"
           :key="c"
-          class="w-5 h-5 rounded border border-white/10 hover:scale-110 transition-transform"
+          class="w-6 h-6 rounded-md border border-white/10 hover:scale-110 transition-transform"
           :class="{ 'ring-1 ring-[#00cfff]': c === modelValue }"
           :style="{ backgroundColor: c }"
           @click="emit('update:modelValue', c)"
