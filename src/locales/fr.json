@@ -2,6 +2,96 @@
   "app": {
     "title": "Oasis"
   },
+  "welcome": {
+    "title": "Bienvenue sur Oasis",
+    "lede": "Une plateforme d'applications pour apprendre, créer, jouer — et parfois se laisser surprendre.",
+    "quote": "Les découvertes les plus précieuses ne sont pas celles que l'on cherchait, mais celles qui nous trouvent en chemin.",
+    "quoteAuthor": "Éloge discret de la sérendipité",
+    "enter": "Entrer dans Oasis"
+  },
+  "auth": {
+    "actions": {
+      "login": "Connexion",
+      "register": "S'inscrire",
+      "logout": "Déconnexion",
+      "backToLogin": "Retour à la connexion"
+    },
+    "fields": {
+      "username": "Nom d'utilisateur",
+      "usernamePlaceholder": "votre_pseudo",
+      "email": "Email",
+      "password": "Mot de passe",
+      "confirmPassword": "Confirmation du mot de passe",
+      "identifier": "Email ou nom d'utilisateur",
+      "identifierPlaceholder": "email{'@'}exemple.com ou pseudo"
+    },
+    "password": {
+      "strengthLabel": "Robustesse",
+      "rules": {
+        "min": "Au moins 8 caractères",
+        "upper": "Au moins une majuscule",
+        "digit": "Au moins un chiffre",
+        "special": "Au moins un caractère spécial"
+      },
+      "strength": {
+        "empty": "—",
+        "weak": "Faible",
+        "fair": "Moyen",
+        "good": "Correct",
+        "strong": "Fort"
+      }
+    },
+    "register": {
+      "title": "Créer un compte",
+      "subtitle": "Rejoignez la plateforme Oasis",
+      "cguBefore": "J'accepte les",
+      "cguLink": "conditions générales d'utilisation",
+      "emailSent": "Email de confirmation envoyé",
+      "success": "Un email de confirmation vous a été envoyé. Cliquez sur le lien qu'il contient pour activer votre compte.",
+      "conflict": "Un compte existe déjà avec ces informations.",
+      "haveAccount": "Vous avez déjà un compte ?"
+    },
+    "login": {
+      "title": "Connexion",
+      "subtitle": "Entrez vos identifiants pour accéder à Oasis",
+      "forgotPassword": "Mot de passe oublié ?",
+      "noAccount": "Pas encore de compte ?",
+      "verifiedTitle": "Compte confirmé",
+      "verifiedDescription": "Votre email a été validé, vous pouvez maintenant vous connecter.",
+      "verificationFailed": "Le lien de confirmation est invalide ou expiré."
+    },
+    "forgot": {
+      "title": "Mot de passe oublié",
+      "subtitle": "Entrez votre email pour recevoir un lien de réinitialisation",
+      "submit": "Envoyer le lien",
+      "neutralTitle": "Email envoyé",
+      "neutralDescription": "Si cette adresse est associée à un compte, un lien de réinitialisation vous a été envoyé."
+    },
+    "reset": {
+      "title": "Réinitialiser le mot de passe",
+      "subtitle": "Choisissez un nouveau mot de passe",
+      "newPassword": "Nouveau mot de passe",
+      "submit": "Mettre à jour",
+      "success": "Mot de passe mis à jour ! Redirection vers la connexion…",
+      "tokenInvalid": "Le lien de réinitialisation est invalide ou expiré.",
+      "missingTokenTitle": "Lien invalide",
+      "missingTokenDescription": "Aucun token de réinitialisation n'a été fourni.",
+      "requestNew": "Demander un nouveau lien"
+    },
+    "cgu": {
+      "title": "Conditions générales d'utilisation",
+      "subtitle": "Merci de lire attentivement ces conditions.",
+      "body": "En utilisant Oasis, vous acceptez ces conditions générales d'utilisation.",
+      "placeholder": "Contenu à compléter.",
+      "back": "Retour à l'inscription"
+    },
+    "errors": {
+      "generic": "Une erreur est survenue. Veuillez réessayer.",
+      "invalidCredentials": "Identifiants invalides.",
+      "emailNotVerified": "Veuillez confirmer votre adresse email avant de vous connecter.",
+      "mismatch": "Les mots de passe ne correspondent pas."
+    }
+  },
   "home": {
     "heading": "Applications",
     "subtitle": "Bienvenue sur Oasis, votre plateforme d'applications.",

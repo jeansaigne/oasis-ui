@@ -17,7 +17,7 @@ const apps = computed(() => [
     title: t('apps.drawing.title'),
     description: t('apps.drawing.description'),
     icon: 'i-lucide-brush',
-    color: 'warning' as const,
+    color: 'primary' as const,
     disabled: false,
     route: '/dessin',
   },

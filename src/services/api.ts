@@ -1,14 +1,12 @@
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080'
+import api, { API_BASE_URL } from '@/plugins/axios'
 
 export async function checkApiConnection(): Promise<{ connected: boolean; message: string }> {
   try {
-    const response = await fetch(`${API_BASE_URL}/hello`)
-    if (response.ok) {
-      const text = await response.text()
-      return { connected: true, message: text }
-    }
-    return { connected: false, message: `Erreur ${response.status}` }
+    const response = await api.get<string>('/hello', { responseType: 'text' })
+    return { connected: true, message: String(response.data) }
   } catch (error) {
+    const status = (error as { response?: { status?: number } }).response?.status
+    if (status) return { connected: false, message: `Erreur ${status}` }
     return { connected: false, message: 'API non accessible' }
   }
 }

@@ -2,6 +2,96 @@
   "app": {
     "title": "Oasis"
   },
+  "welcome": {
+    "title": "Welcome to Oasis",
+    "lede": "A platform of apps to learn, create, play — and occasionally be surprised along the way.",
+    "quote": "The most precious discoveries are rarely the ones we were looking for, but those that quietly find us on the way.",
+    "quoteAuthor": "A quiet nod to serendipity",
+    "enter": "Enter Oasis"
+  },
+  "auth": {
+    "actions": {
+      "login": "Sign in",
+      "register": "Sign up",
+      "logout": "Sign out",
+      "backToLogin": "Back to sign in"
+    },
+    "fields": {
+      "username": "Username",
+      "usernamePlaceholder": "your_handle",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm password",
+      "identifier": "Email or username",
+      "identifierPlaceholder": "email{'@'}example.com or handle"
+    },
+    "password": {
+      "strengthLabel": "Strength",
+      "rules": {
+        "min": "At least 8 characters",
+        "upper": "At least one uppercase letter",
+        "digit": "At least one digit",
+        "special": "At least one special character"
+      },
+      "strength": {
+        "empty": "—",
+        "weak": "Weak",
+        "fair": "Fair",
+        "good": "Good",
+        "strong": "Strong"
+      }
+    },
+    "register": {
+      "title": "Create an account",
+      "subtitle": "Join the Oasis platform",
+      "cguBefore": "I accept the",
+      "cguLink": "terms of service",
+      "emailSent": "Confirmation email sent",
+      "success": "A confirmation email has been sent. Click the link it contains to activate your account.",
+      "conflict": "An account already exists with these details.",
+      "haveAccount": "Already have an account?"
+    },
+    "login": {
+      "title": "Sign in",
+      "subtitle": "Enter your credentials to access Oasis",
+      "forgotPassword": "Forgot your password?",
+      "noAccount": "No account yet?",
+      "verifiedTitle": "Account confirmed",
+      "verifiedDescription": "Your email has been verified, you can now sign in.",
+      "verificationFailed": "The confirmation link is invalid or expired."
+    },
+    "forgot": {
+      "title": "Forgot password",
+      "subtitle": "Enter your email to receive a reset link",
+      "submit": "Send link",
+      "neutralTitle": "Email sent",
+      "neutralDescription": "If this address is linked to an account, a reset link has been sent."
+    },
+    "reset": {
+      "title": "Reset password",
+      "subtitle": "Choose a new password",
+      "newPassword": "New password",
+      "submit": "Update",
+      "success": "Password updated! Redirecting to sign in…",
+      "tokenInvalid": "The reset link is invalid or expired.",
+      "missingTokenTitle": "Invalid link",
+      "missingTokenDescription": "No reset token was provided.",
+      "requestNew": "Request a new link"
+    },
+    "cgu": {
+      "title": "Terms of service",
+      "subtitle": "Please read these terms carefully.",
+      "body": "By using Oasis, you accept these terms of service.",
+      "placeholder": "Content to be completed.",
+      "back": "Back to sign up"
+    },
+    "errors": {
+      "generic": "An error occurred. Please try again.",
+      "invalidCredentials": "Invalid credentials.",
+      "emailNotVerified": "Please confirm your email address before signing in.",
+      "mismatch": "Passwords do not match."
+    }
+  },
   "home": {
     "heading": "Applications",
     "subtitle": "Welcome to Oasis, your application platform.",
