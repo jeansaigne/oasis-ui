@@ -19,6 +19,11 @@ const router = createRouter({
       component: () => import('@/views/TicTacToeView.vue'),
     },
     {
+      path: '/games/maze',
+      name: 'maze',
+      component: () => import('@/views/MazeView.vue'),
+    },
+    {
       path: '/dessin',
       name: 'drawing',
       component: () => import('@/views/DrawingView.vue'),

@@ -13,6 +13,13 @@ const games = computed(() => [
     disabled: false,
   },
   {
+    title: t('games.maze.title'),
+    description: t('games.maze.description'),
+    icon: 'i-lucide-square-slash',
+    route: '/games/maze',
+    disabled: false,
+  },
+  {
     title: t('games.connectFour.title'),
     description: t('games.connectFour.description'),
     icon: 'i-lucide-circle',

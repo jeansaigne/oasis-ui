@@ -42,7 +42,19 @@
     "battleship": {
       "title": "Bataille navale",
       "description": "Coulez la flotte ennemie"
+    },
+    "maze": {
+      "title": "Labyrinthe",
+      "description": "Trouvez la clé et échappez-vous du labyrinthe"
     }
+  },
+  "maze": {
+    "title": "Labyrinthe",
+    "objectiveKey": "Objectif : récupérer la clé",
+    "objectiveExit": "Objectif : atteindre la sortie",
+    "winMessage": "Vous avez terminé en {time} !",
+    "replay": "Rejouer",
+    "instructions": "Utilisez les touches directionnelles ou le pad tactile pour vous déplacer"
   },
   "ticTacToe": {
     "title": "Morpion",

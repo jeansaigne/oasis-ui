@@ -42,7 +42,19 @@
     "battleship": {
       "title": "Battleship",
       "description": "Sink the enemy fleet"
+    },
+    "maze": {
+      "title": "Maze",
+      "description": "Find the key and escape the maze"
     }
+  },
+  "maze": {
+    "title": "Maze",
+    "objectiveKey": "Objective: find the key",
+    "objectiveExit": "Objective: reach the exit",
+    "winMessage": "You finished in {time}!",
+    "replay": "Play again",
+    "instructions": "Use arrow keys or the touch pad to move"
   },
   "ticTacToe": {
     "title": "Tic-Tac-Toe",
