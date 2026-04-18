@@ -1,27 +1,32 @@
 <script setup lang="ts">
-const games = [
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+
+const games = computed(() => [
   {
-    title: 'Morpion',
-    description: 'Le classique Tic-Tac-Toe — 2 joueurs en local',
+    title: t('games.ticTacToe.title'),
+    description: t('games.ticTacToe.description'),
     icon: 'i-lucide-hash',
     route: '/games/tic-tac-toe',
     disabled: false,
   },
   {
-    title: 'Puissance 4',
-    description: 'Alignez 4 jetons avant votre adversaire',
+    title: t('games.connectFour.title'),
+    description: t('games.connectFour.description'),
     icon: 'i-lucide-circle',
     route: '',
     disabled: true,
   },
   {
-    title: 'Bataille navale',
-    description: 'Coulez la flotte ennemie',
+    title: t('games.battleship.title'),
+    description: t('games.battleship.description'),
     icon: 'i-lucide-ship',
     route: '',
     disabled: true,
   },
-]
+])
 </script>
 
 <template>
@@ -30,8 +35,8 @@ const games = [
       <UButton icon="i-lucide-arrow-left" variant="ghost" color="neutral" to="/" />
       <UIcon name="i-lucide-dices" class="text-2xl text-(--ui-primary)" />
       <div>
-        <h2 class="text-2xl font-semibold text-(--ui-text-highlighted)">Jeux</h2>
-        <p class="text-sm text-(--ui-text-muted)">Choisissez un jeu pour commencer une partie.</p>
+        <h2 class="text-2xl font-semibold text-(--ui-text-highlighted)">{{ $t('games.heading') }}</h2>
+        <p class="text-sm text-(--ui-text-muted)">{{ $t('games.subtitle') }}</p>
       </div>
     </div>
 
@@ -52,10 +57,10 @@ const games = [
           </div>
         </div>
         <template #footer v-if="!game.disabled">
-          <UButton label="Jouer" color="primary" variant="soft" block :to="game.route" />
+          <UButton :label="$t('games.play')" color="primary" variant="soft" block :to="game.route" />
         </template>
         <template #footer v-else>
-          <UBadge label="Bientôt disponible" color="neutral" variant="subtle" />
+          <UBadge :label="$t('games.comingSoon')" color="neutral" variant="subtle" />
         </template>
       </UCard>
     </div>

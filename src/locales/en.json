@@ -1,0 +1,63 @@
+{
+  "app": {
+    "title": "Oasis"
+  },
+  "home": {
+    "heading": "Applications",
+    "subtitle": "Welcome to Oasis, your application platform.",
+    "open": "Open",
+    "comingSoon": "Coming soon"
+  },
+  "apps": {
+    "games": {
+      "title": "Games",
+      "description": "Game library and match statistics"
+    },
+    "trading": {
+      "title": "Trading",
+      "description": "Portfolio tracking, analysis and market alerts"
+    },
+    "finances": {
+      "title": "Personal finances",
+      "description": "Budget, expenses and savings goals"
+    }
+  },
+  "games": {
+    "heading": "Games",
+    "subtitle": "Choose a game to start a match.",
+    "play": "Play",
+    "comingSoon": "Coming soon",
+    "ticTacToe": {
+      "title": "Tic-Tac-Toe",
+      "description": "The classic Tic-Tac-Toe — 2 players local"
+    },
+    "connectFour": {
+      "title": "Connect 4",
+      "description": "Line up 4 tokens before your opponent"
+    },
+    "battleship": {
+      "title": "Battleship",
+      "description": "Sink the enemy fleet"
+    }
+  },
+  "ticTacToe": {
+    "title": "Tic-Tac-Toe",
+    "playerWins": "Player {player} wins the round!",
+    "draw": "Draw!",
+    "playerTurn": "Player {player}'s turn",
+    "newGame": "New game",
+    "playerX": "Player X",
+    "playerO": "Player O",
+    "draws": "Draws"
+  },
+  "apiStatus": {
+    "heading": "API Status",
+    "loading": "Connecting...",
+    "connected": "API connected",
+    "disconnected": "API disconnected",
+    "retry": "Retry",
+    "openPanel": "Open API panel",
+    "closePanel": "Close"
+  }
+}
+

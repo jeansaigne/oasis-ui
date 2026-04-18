@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 type CellValue = 'X' | 'O' | null
 type Board = CellValue[]
@@ -34,9 +37,9 @@ const isDraw = computed(() => !winner.value && board.value.every((c) => c !== nu
 const gameOver = computed(() => !!winner.value || isDraw.value)
 
 const statusText = computed(() => {
-  if (winner.value) return `Joueur ${winner.value} remporte la manche !`
-  if (isDraw.value) return 'Match nul !'
-  return `Tour du joueur ${currentPlayer.value}`
+  if (winner.value) return t('ticTacToe.playerWins', { player: winner.value })
+  if (isDraw.value) return t('ticTacToe.draw')
+  return t('ticTacToe.playerTurn', { player: currentPlayer.value })
 })
 
 function play(index: number) {
@@ -88,21 +91,21 @@ function isWinningCell(index: number) {
     </div>
 
     <!-- New game -->
-    <UButton label="Nouvelle partie" icon="i-lucide-rotate-ccw" color="primary" variant="soft" @click="reset" />
+    <UButton :label="t('ticTacToe.newGame')" icon="i-lucide-rotate-ccw" color="primary" variant="soft" @click="reset" />
 
     <!-- Scoreboard -->
     <div class="flex gap-6 text-sm font-mono">
       <div class="flex flex-col items-center">
         <span class="text-(--ui-primary) font-bold text-lg">{{ score.X }}</span>
-        <span class="text-(--ui-text-muted)">Joueur X</span>
+        <span class="text-(--ui-text-muted)">{{ t('ticTacToe.playerX') }}</span>
       </div>
       <div class="flex flex-col items-center">
         <span class="text-(--ui-text-dimmed) font-bold text-lg">{{ score.draw }}</span>
-        <span class="text-(--ui-text-muted)">Nuls</span>
+        <span class="text-(--ui-text-muted)">{{ t('ticTacToe.draws') }}</span>
       </div>
       <div class="flex flex-col items-center">
         <span class="text-(--ui-success) font-bold text-lg">{{ score.O }}</span>
-        <span class="text-(--ui-text-muted)">Joueur O</span>
+        <span class="text-(--ui-text-muted)">{{ t('ticTacToe.playerO') }}</span>
       </div>
     </div>
   </div>

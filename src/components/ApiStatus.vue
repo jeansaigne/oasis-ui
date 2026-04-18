@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { checkApiConnection, API_BASE_URL } from '@/services/api'
+
+const { t } = useI18n()
 
 const isOpen = ref(false)
 const status = ref<'loading' | 'connected' | 'error'>('loading')
@@ -22,20 +25,20 @@ onMounted(checkConnection)
 
 <template>
   <div class="api-status-panel" :class="{ open: isOpen }">
-    <button class="toggle-tab" @click="toggle" :title="isOpen ? 'Fermer' : 'Ouvrir le panneau API'">
+    <button class="toggle-tab" @click="toggle" :title="isOpen ? t('apiStatus.closePanel') : t('apiStatus.openPanel')">
       <span class="tab-dot" :class="status"></span>
     </button>
     <div class="panel-content">
       <div class="panel-header">
-        <h3>API Status</h3>
+        <h3>{{ t('apiStatus.heading') }}</h3>
         <button class="close-btn" @click="toggle">&times;</button>
       </div>
       <div class="status-indicator" :class="status">
         <span class="dot"></span>
         <span class="label">
-          <template v-if="status === 'loading'">Connexion en cours...</template>
-          <template v-else-if="status === 'connected'">API connectée</template>
-          <template v-else>API non connectée</template>
+          <template v-if="status === 'loading'">{{ t('apiStatus.loading') }}</template>
+          <template v-else-if="status === 'connected'">{{ t('apiStatus.connected') }}</template>
+          <template v-else>{{ t('apiStatus.disconnected') }}</template>
         </span>
       </div>
       <p class="details">
@@ -43,7 +46,7 @@ onMounted(checkConnection)
         <span v-if="message" class="message">{{ message }}</span>
       </p>
       <button v-if="status !== 'loading'" class="retry-btn" @click="checkConnection">
-        Réessayer
+        {{ t('apiStatus.retry') }}
       </button>
     </div>
   </div>

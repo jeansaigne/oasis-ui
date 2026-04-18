@@ -1,37 +1,42 @@
 <script setup lang="ts">
-const apps = [
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+
+const apps = computed(() => [
   {
-    title: 'Jeux',
-    description: 'Bibliothèque de jeux et statistiques de parties',
+    title: t('apps.games.title'),
+    description: t('apps.games.description'),
     icon: 'i-lucide-dices',
     color: 'primary' as const,
     disabled: false,
     route: '/games',
   },
   {
-    title: 'Trading',
-    description: 'Suivi de portefeuille, analyses et alertes de marché',
+    title: t('apps.trading.title'),
+    description: t('apps.trading.description'),
     icon: 'i-lucide-chart-candlestick',
     color: 'success' as const,
     disabled: true,
     route: '',
   },
   {
-    title: 'Finances personnelles',
-    description: 'Budget, dépenses et objectifs d\'épargne',
+    title: t('apps.finances.title'),
+    description: t('apps.finances.description'),
     icon: 'i-lucide-wallet',
     color: 'info' as const,
     disabled: true,
     route: '',
   },
-]
+])
 </script>
 
 <template>
   <div>
     <div class="mb-8">
-      <h2 class="text-2xl font-semibold text-(--ui-text-highlighted)">Applications</h2>
-      <p class="mt-1 text-(--ui-text-muted)">Bienvenue sur Oasis, votre plateforme d'applications.</p>
+      <h2 class="text-2xl font-semibold text-(--ui-text-highlighted)">{{ $t('home.heading') }}</h2>
+      <p class="mt-1 text-(--ui-text-muted)">{{ $t('home.subtitle') }}</p>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -52,10 +57,10 @@ const apps = [
             </div>
           </div>
           <template #footer v-if="!app.disabled">
-            <UButton label="Ouvrir" :color="app.color" variant="soft" block :to="app.route" />
+            <UButton :label="$t('home.open')" :color="app.color" variant="soft" block :to="app.route" />
           </template>
           <template #footer v-else>
-            <UBadge label="Bientôt disponible" color="neutral" variant="subtle" />
+            <UBadge :label="$t('home.comingSoon')" color="neutral" variant="subtle" />
           </template>
         </UCard>
       </div>

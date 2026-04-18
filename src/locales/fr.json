@@ -1,0 +1,63 @@
+{
+  "app": {
+    "title": "Oasis"
+  },
+  "home": {
+    "heading": "Applications",
+    "subtitle": "Bienvenue sur Oasis, votre plateforme d'applications.",
+    "open": "Ouvrir",
+    "comingSoon": "Bientôt disponible"
+  },
+  "apps": {
+    "games": {
+      "title": "Jeux",
+      "description": "Bibliothèque de jeux et statistiques de parties"
+    },
+    "trading": {
+      "title": "Trading",
+      "description": "Suivi de portefeuille, analyses et alertes de marché"
+    },
+    "finances": {
+      "title": "Finances personnelles",
+      "description": "Budget, dépenses et objectifs d'épargne"
+    }
+  },
+  "games": {
+    "heading": "Jeux",
+    "subtitle": "Choisissez un jeu pour commencer une partie.",
+    "play": "Jouer",
+    "comingSoon": "Bientôt disponible",
+    "ticTacToe": {
+      "title": "Morpion",
+      "description": "Le classique Tic-Tac-Toe — 2 joueurs en local"
+    },
+    "connectFour": {
+      "title": "Puissance 4",
+      "description": "Alignez 4 jetons avant votre adversaire"
+    },
+    "battleship": {
+      "title": "Bataille navale",
+      "description": "Coulez la flotte ennemie"
+    }
+  },
+  "ticTacToe": {
+    "title": "Morpion",
+    "playerWins": "Joueur {player} remporte la manche !",
+    "draw": "Match nul !",
+    "playerTurn": "Tour du joueur {player}",
+    "newGame": "Nouvelle partie",
+    "playerX": "Joueur X",
+    "playerO": "Joueur O",
+    "draws": "Nuls"
+  },
+  "apiStatus": {
+    "heading": "API Status",
+    "loading": "Connexion en cours...",
+    "connected": "API connectée",
+    "disconnected": "API non connectée",
+    "retry": "Réessayer",
+    "openPanel": "Ouvrir le panneau API",
+    "closePanel": "Fermer"
+  }
+}
+
