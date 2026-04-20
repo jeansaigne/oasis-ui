@@ -37,5 +37,10 @@ export const authService = {
     api
       .post<{ message: string }>('/api/auth/reset-password', { token, newPassword })
       .then((r) => r.data),
+
+  resendVerification: (identifier: string) =>
+    api
+      .post<{ message: string }>('/api/auth/resend-verification', { identifier })
+      .then((r) => r.data),
 }
 

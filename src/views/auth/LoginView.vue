@@ -3,6 +3,7 @@ import { computed, reactive, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute, useRouter } from 'vue-router'
 import { useAuthStore } from '@/stores/auth'
+import { authService } from '@/services/auth'
 import AuthCard from '@/components/AuthCard.vue'
 import axios from 'axios'
 
@@ -13,6 +14,9 @@ const router = useRouter()
 
 const form = reactive({ identifier: '', password: '' })
 const errorMessage = ref<string | null>(null)
+const needsVerification = ref(false)
+const resendLoading = ref(false)
+const resendDone = ref(false)
 
 const verifiedBanner = computed(() => route.query.verified === 'true')
 const verificationFailed = computed(() => route.query.verified === 'false')
@@ -24,6 +28,8 @@ const canSubmit = computed(
 async function onSubmit() {
   if (!canSubmit.value) return
   errorMessage.value = null
+  needsVerification.value = false
+  resendDone.value = false
   try {
     await auth.login({ identifier: form.identifier.trim(), password: form.password })
     const redirect = (route.query.redirect as string | undefined) || '/'
@@ -34,6 +40,7 @@ async function onSubmit() {
       const data = err.response?.data as { message?: string; details?: string[] } | undefined
       if (status === 403 && data?.details?.includes('EMAIL_NOT_VERIFIED')) {
         errorMessage.value = t('auth.errors.emailNotVerified')
+        needsVerification.value = true
       } else if (status === 401) {
         errorMessage.value = t('auth.errors.invalidCredentials')
       } else {
@@ -42,6 +49,21 @@ async function onSubmit() {
     } else {
       errorMessage.value = t('auth.errors.generic')
     }
+  }
+}
+
+async function onResendVerification() {
+  const identifier = form.identifier.trim()
+  if (!identifier || resendLoading.value) return
+  resendLoading.value = true
+  try {
+    await authService.resendVerification(identifier)
+    resendDone.value = true
+  } catch {
+    // On reste volontairement muet : l'endpoint est non-énumérant côté back.
+    resendDone.value = true
+  } finally {
+    resendLoading.value = false
   }
 }
 </script>
@@ -72,6 +94,27 @@ async function onSubmit() {
         variant="soft"
         :description="errorMessage"
         icon="i-lucide-x-circle"
+        class="mb-4"
+      >
+        <template v-if="needsVerification && !resendDone" #actions>
+          <UButton
+            size="xs"
+            color="error"
+            variant="outline"
+            icon="i-lucide-mail"
+            :loading="resendLoading"
+            :label="$t('auth.actions.resendVerification')"
+            @click="onResendVerification"
+          />
+        </template>
+      </UAlert>
+
+      <UAlert
+        v-if="resendDone"
+        color="info"
+        variant="soft"
+        :description="$t('auth.login.resendSent')"
+        icon="i-lucide-mail-check"
         class="mb-4"
       />
 

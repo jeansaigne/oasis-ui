@@ -14,7 +14,8 @@
       "login": "Connexion",
       "register": "S'inscrire",
       "logout": "Déconnexion",
-      "backToLogin": "Retour à la connexion"
+      "backToLogin": "Retour à la connexion",
+      "resendVerification": "Renvoyer l'email de confirmation"
     },
     "fields": {
       "username": "Nom d'utilisateur",
@@ -58,7 +59,8 @@
       "noAccount": "Pas encore de compte ?",
       "verifiedTitle": "Compte confirmé",
       "verifiedDescription": "Votre email a été validé, vous pouvez maintenant vous connecter.",
-      "verificationFailed": "Le lien de confirmation est invalide ou expiré."
+      "verificationFailed": "Le lien de confirmation est invalide ou expiré.",
+      "resendSent": "Si ce compte existe et n'est pas encore confirmé, un nouvel email vient de vous être envoyé."
     },
     "forgot": {
       "title": "Mot de passe oublié",

@@ -14,7 +14,8 @@
       "login": "Sign in",
       "register": "Sign up",
       "logout": "Sign out",
-      "backToLogin": "Back to sign in"
+      "backToLogin": "Back to sign in",
+      "resendVerification": "Resend confirmation email"
     },
     "fields": {
       "username": "Username",
@@ -58,7 +59,8 @@
       "noAccount": "No account yet?",
       "verifiedTitle": "Account confirmed",
       "verifiedDescription": "Your email has been verified, you can now sign in.",
-      "verificationFailed": "The confirmation link is invalid or expired."
+      "verificationFailed": "The confirmation link is invalid or expired.",
+      "resendSent": "If this account exists and is not yet confirmed, a new email has just been sent to you."
     },
     "forgot": {
       "title": "Forgot password",
